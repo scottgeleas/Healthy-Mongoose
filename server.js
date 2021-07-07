@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const url = 'mongodb://localhost/HealthyDB';
+const url = 'mongodb://localhost:27017/healthydb';
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -10,17 +10,20 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || url, {
+mongoose.connect('mongodb://localhost/healthydb', {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true,
 });
 
-const Routes = require('./routes/routeshtml')
-const apiRoutes = require('./routes/api')
+const Routes = require('./routes/htmlRoutes')
+const apiRoutes = require('./routes/api/workoutRoutes')
 
 app.use('/', Routes);
 app.use('/api', apiRoutes);
 
-app.listen(PORT, () => {
-    console.log(`App running on port ${PORT}...`)
-});
+mongoose.connection.once('open', () => {
+    app.listen(PORT, () => {
+        console.log(`App running on port ${PORT}...`)
+    });
+})
