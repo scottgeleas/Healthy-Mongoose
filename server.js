@@ -1,19 +1,22 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const url = 'mongodb://localhost:27017/healthydb';
+const morgan = require('morgan')
+const url = 'mongodb://localhost/healthydb';
 
 const PORT = process.env.PORT || 3000;
 const app = express();
+
+app.use(morgan('short'))
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect('mongodb://localhost/healthydb', {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true,
+mongoose.connect(url, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
 });
 
 const Routes = require('./routes/htmlRoutes')
