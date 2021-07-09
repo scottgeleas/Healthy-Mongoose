@@ -2,43 +2,41 @@ const express = require('express');
 const router = express.Router();
 const Workout = require('../../models/workout');
 
-// GET last workout all workouts
+// GET all workouts/last workout
 router.get('/workouts', (req, res) => {
     try {
         Workout.find({})
+            // Workout.aggregate(
+            //     [{
+            //         "$addFields": {
+            //             "totalDuration": { "$sum": "$exercises.duration" }
+            //         }
+            //     }],
+            //     function(err, results) {
+            //         res.json(results)
+            //     }
+            // );
+    } catch (err) {
+        res.json(err);
+    };
+});
 
+// GET all workouts stats 7 days
+router.get('/workouts/range', (req, res) => {
+    try {
+        Workout.find({})
         Workout.aggregate(
             [{
                 "$addFields": {
                     "totalDuration": { "$sum": "$exercises.duration" }
-                }
+                },
+                "$limit": 7
             }],
             function(err, results) {
                 res.json(results)
             }
         )
 
-    } catch (err) {
-        res.json(err);
-    };
-});
-
-// GET duration of all workouts
-router.get('/workouts/range', (req, res) => {
-    try {
-        Workout.find({})
-
-
-        Workout.aggregate(
-            [{
-                "$addFields": {
-                    "totalDuration": { "$sum": "$exercises.duration" }
-                }
-            }],
-            function(err, results) {
-                res.json(results)
-            }
-        );
     } catch (err) {
         res.json(err);
     };
