@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 const Workout = require('../models/workout');
+require('dotenv').config();
 
-mongoose.connect(DB_URL, {
+const url = process.env.DB_URL;
+
+mongoose.connect(url, {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true,

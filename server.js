@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(DB_URL, {
+mongoose.connect(url, {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
