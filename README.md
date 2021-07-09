@@ -1,7 +1,5 @@
 # Healthy-Mongoose
-This application allows you to track your workouts and reach your fitness goals.
-When you visit you can continue with a past workout, or make a new one. After creating a workout and adding exercies, you can see how your stats increase for each exercise you add. When you visit the dashborad page, you will see the combined stats of the past seven workouts.
-Healthy Mongoose makes it easy to add exercises to your workout and see your combined stats.
+This application allows you to track your workouts and reach your fitness goals. When you visit you can continue with a past workout, or make a new one. After creating a workout and adding exercises, you can see how your stats increase for each exercise you add. When you visit the dashboard page, you will see the combined stats of the past seven workouts. Healthy Mongoose makes it easy to stay in shape!
 
 ![Fitness Tracker](public/images/fitnesstracker.png)
 ![Add Exercise](public/images/addexercises.png)
@@ -21,7 +19,6 @@ If you want to edit this app you must have a Github account, have downloaded Nod
  ### Authors:
 
  Scott Geleas
-
 
  ### Built With:
 
