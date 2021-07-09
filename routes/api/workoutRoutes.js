@@ -27,10 +27,10 @@ router.get('/workouts/range', (req, res) => {
         Workout.find({})
         Workout.aggregate(
             [{
-                $limit: 7,
                 "$addFields": {
                     "totalDuration": { "$sum": "$exercises.duration" }
-                }
+                },
+                "$limit": 7
             }],
             function(err, results) {
                 res.json(results)
