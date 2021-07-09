@@ -1,7 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan')
-const url = 'mongodb://localhost/healthydb';
+require('dotenv').config();
+
+const url = process.env.DB_URL;
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -13,7 +15,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(url, {
+mongoose.connect(DB_URL, {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true,

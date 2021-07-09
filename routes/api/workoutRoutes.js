@@ -6,24 +6,40 @@ const Workout = require('../../models/workout');
 router.get('/workouts', (req, res) => {
     try {
         Workout.find({})
-            .then(dbWorkout => {
-                res.json(dbWorkout);
-            })
-    }
-    catch (err) {
+
+        Workout.aggregate(
+            [{
+                "$addFields": {
+                    "totalDuration": { "$sum": "$exercises.duration" }
+                }
+            }],
+            function(err, results) {
+                res.json(results)
+            }
+        )
+
+    } catch (err) {
         res.json(err);
     };
 });
 
 // ???????????????? 
-router.get('/workouts/range', () => {
+router.get('/workouts/range', (req, res) => {
     try {
         Workout.find({})
-            .then(dbWorkout => {
-                res.json(dbWorkout);
-            })
-    }
-    catch (err) {
+
+
+        Workout.aggregate(
+            [{
+                "$addFields": {
+                    "totalDuration": { "$sum": "$exercises.duration" }
+                }
+            }],
+            function(err, results) {
+                res.json(results)
+            }
+        );
+    } catch (err) {
         res.json(err);
     };
 });
@@ -31,10 +47,7 @@ router.get('/workouts/range', () => {
 // PUT add exercise
 router.put('/workouts/:id', (req, res) => {
     try {
-        Workout.findOneAndUpdate(
-            { _id: req.params.id },
-            { $push: { exercises: req.body } }
-        )
+        Workout.findOneAndUpdate({ _id: req.params.id }, { $push: { exercises: req.body } })
             .then(dbWorkout => {
                 res.json(dbWorkout);
             })
@@ -48,8 +61,6 @@ router.post("/workouts", (req, res) => {
     try {
         Workout.create({})
             .then(dbWorkout => {
-                console.log("somthing2222")
-                console.log(dbWorkout)
                 res.json(dbWorkout);
             })
     } catch (err) {
