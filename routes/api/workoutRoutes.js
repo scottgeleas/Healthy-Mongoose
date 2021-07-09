@@ -6,7 +6,6 @@ const Workout = require('../../models/workout');
 router.get('/workouts', (req, res) => {
     try {
         Workout.find({})
-
         Workout.aggregate(
             [{
                 "$addFields": {
@@ -23,12 +22,10 @@ router.get('/workouts', (req, res) => {
     };
 });
 
-// ???????????????? 
+// GET duration of all workouts
 router.get('/workouts/range', (req, res) => {
     try {
         Workout.find({})
-
-
         Workout.aggregate(
             [{
                 "$addFields": {
@@ -67,6 +64,5 @@ router.post("/workouts", (req, res) => {
         res.json(err);
     };
 });
-
 
 module.exports = router;
