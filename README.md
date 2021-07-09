@@ -18,6 +18,7 @@ If you want to edit this app you must have a Github account, have downloaded Nod
 
  Scott Geleas
 
+
  ### Built With:
 
 - Javascript
@@ -31,6 +32,8 @@ If you want to edit this app you must have a Github account, have downloaded Nod
  ### Acknowledgments:
 
 University of New Hampshire Coding Bootcamp
+
+Website icon made by [Freepik](https://www.freepik.com) from [Flaticon](https://www.flaticon.com/)
 
  ### License: 
  
