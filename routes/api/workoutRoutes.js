@@ -6,16 +6,16 @@ const Workout = require('../../models/workout');
 router.get('/workouts', (req, res) => {
     try {
         Workout.find({})
-            // Workout.aggregate(
-            //     [{
-            //         "$addFields": {
-            //             "totalDuration": { "$sum": "$exercises.duration" }
-            //         }
-            //     }],
-            //     function(err, results) {
-            //         res.json(results)
-            //     }
-            // );
+        Workout.aggregate(
+            [{
+                "$addFields": {
+                    "totalDuration": { "$sum": "$exercises.duration" }
+                }
+            }],
+            function(err, results) {
+                res.json(results)
+            }
+        );
     } catch (err) {
         res.json(err);
     };
