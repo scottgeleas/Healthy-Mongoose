@@ -1,5 +1,5 @@
 # Healthy-Mongoose
-This application allows you to track your workouts and reach your fitness goals. When you visit you can continue with a past workout, or make a new one. After creating a workout and adding exercises, you can see how your stats increase for each exercise you add. When you visit the dashboard page, you will see the combined stats of the past seven workouts. Healthy Mongoose makes it easy to stay in shape!
+This application allows you to track your workouts and reach your fitness goals. When you visit you can add exercises to your last workout or make a new one. After adding exercises, you can track your progress via the stats page. In the stats page, you will see the combined weight lifted, and the duration for each of the past seven workouts. Healthy Mongoose makes it easy to stay in shape!
 
 ![Fitness Tracker](public/images/fitnesstracker.png)
 ![Add Exercise](public/images/addexercises.png)
@@ -11,9 +11,9 @@ If you want to edit this app you must have a Github account, have downloaded Nod
 
 - Create a Github account here: [Github](https://github.com/)
 - Download Visual Studio here: [Visual Studio](https://code.visualstudio.com/download/)
-- Download MongoDb here: [MongoDB](https://www.mongodb.com/)
+- Download MongoDB here: [MongoDB](https://www.mongodb.com/)
 - Download Robo 3T here: [Robo 3T](https://robomongo.org/)
-- Download Node.js: [Node.js](https://nodejs.org/en/)
+- Download Node: [Node.js](https://nodejs.org/en/)
 - Repository link: [Healthy Mongoose Repo](https://github.com/scottgeleas/Healthy-Mongoose)
 
  ### Authors:

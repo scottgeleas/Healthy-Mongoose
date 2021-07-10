@@ -5,17 +5,18 @@ const Workout = require('../../models/workout');
 // GET all workouts/last workout
 router.get('/workouts', (req, res) => {
     try {
-        Workout.find({})
-        Workout.aggregate(
-            [{
-                "$addFields": {
-                    "totalDuration": { "$sum": "$exercises.duration" }
+        Workout.find().then(data => {
+            Workout.aggregate(
+                [{
+                    "$addFields": {
+                        "totalDuration": { "$sum": "$exercises.duration" }
+                    },
+                }],
+                (err, results) => {
+                    res.json(results);
                 }
-            }],
-            (err, results) => {
-                res.json(results);
-            }
-        );
+            );
+        });
     } catch (err) {
         res.json(err);
     };
