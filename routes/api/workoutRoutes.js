@@ -12,8 +12,8 @@ router.get('/workouts', (req, res) => {
                     "totalDuration": { "$sum": "$exercises.duration" }
                 }
             }],
-            function(err, results) {
-                res.json(results)
+            (err, results) => {
+                res.json(results);
             }
         );
     } catch (err) {
@@ -31,11 +31,11 @@ router.get('/workouts/range', (req, res) => {
                         "totalDuration": { "$sum": "$exercises.duration" }
                     },
                 }],
-                function(err, results) {
-                    res.json(results)
+                (err, results) => {
+                    res.json(results);
                 }
-            ).limit(7)
-        })
+            ).limit(7);
+        });
     } catch (err) {
         res.json(err);
     };
@@ -47,7 +47,7 @@ router.put('/workouts/:id', (req, res) => {
         Workout.findOneAndUpdate({ _id: req.params.id }, { $push: { exercises: req.body } })
             .then(dbWorkout => {
                 res.json(dbWorkout);
-            })
+            });
     } catch (err) {
         res.json(err);
     }
@@ -59,7 +59,7 @@ router.post("/workouts", (req, res) => {
         Workout.create({})
             .then(dbWorkout => {
                 res.json(dbWorkout);
-            })
+            });
     } catch (err) {
         res.json(err);
     };
