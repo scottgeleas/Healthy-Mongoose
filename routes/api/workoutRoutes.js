@@ -24,19 +24,18 @@ router.get('/workouts', (req, res) => {
 // GET all workouts stats 7 days
 router.get('/workouts/range', (req, res) => {
     try {
-        Workout.find({})
-        Workout.aggregate(
-            [{
-                "$addFields": {
-                    "totalDuration": { "$sum": "$exercises.duration" }
-                },
-                "$limit": 7
-            }],
-            function(err, results) {
-                res.json(results)
-            }
-        )
-
+        Workout.find().then(data => {
+            Workout.aggregate(
+                [{
+                    "$addFields": {
+                        "totalDuration": { "$sum": "$exercises.duration" }
+                    },
+                }],
+                function(err, results) {
+                    res.json(results)
+                }
+            ).limit(7)
+        })
     } catch (err) {
         res.json(err);
     };
