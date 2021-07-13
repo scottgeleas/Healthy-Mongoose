@@ -1,11 +1,13 @@
-# Healthy-Mongoose
-This application allows you to track your workouts and reach your fitness goals. When you visit you can add exercises to your last workout or make a new one. After adding exercises, you can track your progress via the stats page. In the stats page, you will see the combined weight lifted, and the duration for each of the past seven workouts. Healthy Mongoose makes it easy to stay in shape!
+# Healthy-Mongoose 
+This application allows you to track your workouts and reach your fitness goals. When you visit you can add exercises to your last workout or make a new one. After adding exercises, you can track your progress via the dashboard. On the dashboard, you will see the combined weight lifted, and the duration for each of the past seven workouts. Healthy Mongoose makes it easy to stay in shape!
 
 ![Fitness Tracker](public/images/fitnesstracker.png)
 ![Add Exercise](public/images/addexercises.png)
 ![Stats](public/images/stats.png)
 
 ## Getting Started:
+
+### [Healthy Mongoose Website](https://healthy-mongoose.herokuapp.com/)
 
 If you want to edit this app you must have a Github account, have downloaded Node.js, MongoDB, Robo 3T, and Visual Studio Code.
 
@@ -38,7 +40,7 @@ Website icon made by [Freepik](https://www.freepik.com) from [Flaticon](https://
 
  ### License: 
  
-MIT License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Copyright (c) [2021] [Scott Geleas]]
 
