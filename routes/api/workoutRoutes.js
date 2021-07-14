@@ -35,7 +35,7 @@ router.get('/workouts/range', (req, res) => {
                 (err, results) => {
                     res.json(results);
                 }
-            ).limit(7);
+            ).sort({ day: -1 }).limit(7);
         });
     } catch (err) {
         res.json(err);

@@ -11,7 +11,7 @@ mongoose.connect(url, {
 });
 
 const workoutSeed = [{
-        day: new Date(new Date().setDate(new Date().getDate())),
+        day: new Date(new Date().setDate(new Date().getDate() - 9)),
         exercises: [{
             type: 'resistance',
             name: 'Bicep Curl',
@@ -22,7 +22,7 @@ const workoutSeed = [{
         }, ],
     },
     {
-        day: new Date(new Date().setDate(new Date().getDate() - 1)),
+        day: new Date(new Date().setDate(new Date().getDate() - 8)),
         exercises: [{
             type: 'resistance',
             name: 'Skull Crusher',
@@ -33,7 +33,7 @@ const workoutSeed = [{
         }, ],
     },
     {
-        day: new Date(new Date().setDate(new Date().getDate() - 2)),
+        day: new Date(new Date().setDate(new Date().getDate() - 7)),
         exercises: [{
             type: 'resistance',
             name: 'Bench Press',
@@ -44,7 +44,7 @@ const workoutSeed = [{
         }, ],
     },
     {
-        day: new Date(new Date().setDate(new Date().getDate() - 3)),
+        day: new Date(new Date().setDate(new Date().getDate() - 6)),
         exercises: [{
             type: 'cardio',
             name: 'Elliptical',
@@ -53,7 +53,7 @@ const workoutSeed = [{
         }, ],
     },
     {
-        day: new Date(new Date().setDate(new Date().getDate() - 4)),
+        day: new Date(new Date().setDate(new Date().getDate() - 5)),
         exercises: [{
             type: 'resistance',
             name: 'Squats',
@@ -64,10 +64,10 @@ const workoutSeed = [{
         }, ],
     },
     {
-        day: new Date(new Date().setDate(new Date().getDate() - 5)),
+        day: new Date(new Date().setDate(new Date().getDate() - 4)),
         exercises: [{
             type: 'resistance',
-            name: 'Tricep Pulls',
+            name: 'Triceps Pull',
             duration: 20,
             weight: 65,
             reps: 10,
@@ -75,18 +75,18 @@ const workoutSeed = [{
         }, ],
     },
     {
-        day: new Date(new Date().setDate(new Date().getDate() - 6)),
+        day: new Date(new Date().setDate(new Date().getDate() - 3)),
         exercises: [{
             type: 'resistance',
             name: 'Leg Press',
-            duration: 20,
+            duration: 15,
             weight: 200,
             reps: 8,
             sets: 4,
         }, ],
     },
     {
-        day: new Date(new Date().setDate(new Date().getDate() - 7)),
+        day: new Date(new Date().setDate(new Date().getDate() - 2)),
         exercises: [{
             type: 'resistance',
             name: 'Bench Press',
@@ -97,7 +97,7 @@ const workoutSeed = [{
         }, ],
     },
     {
-        day: new Date(new Date().setDate(new Date().getDate() - 8)),
+        day: new Date(new Date().setDate(new Date().getDate() - 1)),
         exercises: [{
             type: 'cardio',
             name: 'Treadmill',
@@ -106,7 +106,7 @@ const workoutSeed = [{
         }, ],
     },
     {
-        day: new Date(new Date().setDate(new Date().getDate() - 9)),
+        day: new Date(new Date().setDate(new Date().getDate())),
         exercises: [{
             type: 'resistance',
             name: 'Hammer Curl',
