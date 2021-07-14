@@ -33,6 +33,8 @@ function populateChart(data) {
         }).format(date);
     });
 
+    // BEGINATZERO DOES NOT WORK 
+
     let lineChart = new Chart(line, {
         type: 'line',
         data: {
@@ -52,11 +54,13 @@ function populateChart(data) {
                     display: true,
                     text: 'Time Spent Working Out (Last 7 days)',
                 },
-                scales: {
-                    y: {
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
                         beginAtZero: true,
                     },
-                },
+                }],
             },
         },
     });
@@ -93,13 +97,13 @@ function populateChart(data) {
                     display: true,
                     text: 'Pounds Lifted (Last 7 days)',
                 },
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                        },
-                    }, ],
-                },
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    },
+                }, ],
             },
         },
     });
