@@ -57,10 +57,10 @@ const workoutSeed = [{
         exercises: [{
             type: 'resistance',
             name: 'Squats',
-            duration: 20,
+            duration: 35,
             weight: 110,
-            reps: 5,
-            sets: 5,
+            reps: 8,
+            sets: 4,
         }, ],
     },
     {
@@ -71,7 +71,7 @@ const workoutSeed = [{
             duration: 20,
             weight: 65,
             reps: 10,
-            sets: 5,
+            sets: 3,
         }, ],
     },
     {
@@ -110,7 +110,7 @@ const workoutSeed = [{
         exercises: [{
             type: 'resistance',
             name: 'Hammer Curl',
-            duration: 20,
+            duration: 25,
             weight: 50,
             reps: 5,
             sets: 5,
