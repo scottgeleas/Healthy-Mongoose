@@ -56,11 +56,9 @@ function populateChart(data) {
                 },
             },
             scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true,
-                    },
-                }],
+                y: {
+                    beginAtZero: true,
+                },
             },
         },
     });
